@@ -25,6 +25,9 @@ Route::post('/rsvp', function() {
 
 });
 
+Route::post('register/attendee', 'RegistrationController@registerAttendee');
+Route::post('register/speaker', 'RegistrationController@registerSpeaker');
+
 Route::get('/', function () {
     return view('welcome');
 });

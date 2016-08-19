@@ -1,4 +1,4 @@
-<form method="post" action="{{ url('/rsvp') }}" id="attendee_form" class="reg-form">
+<form method="post" action="{{ url('/register/attendee') }}" id="attendee_form" class="reg-form">
     <h3>Attendee Registration</h3>
     <div class="form-group">
         <label for="">Name:</label>
