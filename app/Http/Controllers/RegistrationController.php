@@ -7,7 +7,7 @@ class RegistrationController extends Controller
 {
     public function registerAttendee(Request $request)
     {
-        dd($request->all());
+        dd('Registering Attendee');
     }
 
     public function registerSpeaker(Request $request)
