@@ -103,12 +103,41 @@
             <div class="row">
               <div class="col-100">
                 <div class="text-center">
-                  <h2 class="section-lead"> Register </h2>
+                  <h2 class="section-lead" id="register-lead-text"> Register </h2>
                 </div>
               </div>
             </div>
 
-            <div class="row">
+            <div class="row" id="speaker-form" style="display:none;">
+                <div class="col-100">
+                    <form method="post" action="{{ url('/rsvp') }}">
+                        <div class="form-group">
+                            <label for=""> Name: </label>
+                            <input name="full_name" type="text" placeholder="Enter Your Name...">
+                        </div>
+
+                        <div class="form-group">
+                            <label for=""> Email: </label>
+                            <input name="email" type="email" placeholder="Enter Your Email...">
+                        </div>
+
+                        <div class="form-group">
+                            <label for=""> Talk Name: </label>
+                            <input name="talk-name" type="text" placeholder="Enter Your Talk Name... ">
+                        </div>
+
+
+                        <div class="form-group">
+                          <button class="btn rounded submit-btn"> Submit </button>
+                        </div>
+
+                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                    </form>
+                    <button id="rsvp-request-btn" class="btn rounded submit-btn"> RSVP </button>
+                </div>
+            </div>
+ 
+            <div class="row" id="rsvp-form">
                 <div class="col-100">
                     <form method="post" action="{{ url('/rsvp') }}">
                         <div class="form-group">
@@ -127,7 +156,10 @@
 
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                     </form>
+
+                    <button id="speaker-request-btn" class="btn rounded submit-btn"> Talk Proposal </button>
                 </div>
+
             </div>
         </div>
 
@@ -137,6 +169,19 @@
         $('.map-overlay').on('click', function() {
             $(this).css('display', 'none');
 
+        })
+
+        $('#rsvp-request-btn').on('click', function() {
+            $('#speaker-form').css('display', 'none');
+            $('#rsvp-form').css('display', 'block');
+            $('#register-lead-text').html('RSVP');
+        })
+
+
+        $('#speaker-request-btn').on('click', function() {
+            $('#rsvp-form').css('display', 'none');
+            $('#speaker-form').css('display', 'block');
+            $('#register-lead-text').html('Talk Proposal');
         })
 
         $(window).on('scroll', function() {
