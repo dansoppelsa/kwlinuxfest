@@ -100,24 +100,37 @@
         <a id="register"></a>
 
         <div class="container">
+
             <div class="row">
-              <div class="col-100">
-                <div class="text-center">
-                  <h2 class="section-lead" id="register-lead-text"> Register </h2>
+                <div class="col-100">
+                    <div class="text-center">
+                        <h2 class="section-lead" id="register-lead-text">Register</h2>
+                    </div>
                 </div>
-              </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-100 text-center">
+                    <h3>What would you like to do?</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-50 text-center">
+                    <button class="btn rounded reg_action" data-form="attendee_form">Attend the Conference</button>
+                </div>
+                <div class="col-50 text-center">
+                    <button class="btn rounded reg_action" data-form="speaker_form">Speak at the Conference</button>
+                </div>
             </div>
 
             <div class="row">
                 <div class="col-100">
-                    <h3>Attendee Registration</h3>
                     @include('partials/attendee-registration-form')
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-100">
-                    <h3>Speaker Registration</h3>
                     @include('partials/speaker-registration-form')
                 </div>
             </div>
@@ -146,6 +159,13 @@
         $(window).on('scroll', function() {
             $('.map-overlay').css('display', 'block');
         })
+        
+        $('.reg_action').click(function (e) {
+            var form = $(e.currentTarget).data('form');
+
+            $('.reg-form').hide();
+            $('#' + form).fadeIn('slow');
+        });
     </script>
 </body>
 

@@ -1,4 +1,5 @@
-<form method="post" action="{{ url('/rsvp') }}">
+<form method="post" action="{{ url('/rsvp') }}" id="speaker_form" class="reg-form">
+    <h3>Speaker Registration</h3>
     <div class="form-group">
         <label for="">Name:</label>
         <input name="full_name" type="text" required placeholder="Enter Your Name...">
