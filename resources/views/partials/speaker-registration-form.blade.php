@@ -12,7 +12,7 @@
 
     <div class="form-group">
         <label for="">Talk Name:</label>
-        <input name="talk-name" type="text" required placeholder="Enter Your Talk Name... ">
+        <input name="talk_name" type="text" required placeholder="Enter Your Talk Name... ">
     </div>
 
     <div class="form-group">

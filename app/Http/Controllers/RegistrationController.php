@@ -5,12 +5,12 @@ use Illuminate\Http\Request;
 
 class RegistrationController extends Controller
 {
-    public function registerAttendee()
+    public function registerAttendee(Request $request)
     {
-        dd('Registering Attendee');
+        dd($request->all());
     }
 
-    public function registerSpeaker()
+    public function registerSpeaker(Request $request)
     {
         dd('Registering Speaker');
     }
