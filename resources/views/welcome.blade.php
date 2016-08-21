@@ -97,69 +97,42 @@
 
     <section class="contact marketing-section">
 
-        <a name="register">
+        <a id="register"></a>
 
         <div class="container">
+
             <div class="row">
-              <div class="col-100">
-                <div class="text-center">
-                  <h2 class="section-lead" id="register-lead-text"> Register </h2>
+                <div class="col-100">
+                    <div class="text-center">
+                        <h2 class="section-lead" id="register-lead-text">Register</h2>
+                    </div>
                 </div>
-              </div>
             </div>
 
-            <div class="row" id="speaker-form" style="display:none;">
-                <div class="col-100">
-                    <form method="post" action="{{ url('/rsvp') }}">
-                        <div class="form-group">
-                            <label for=""> Name: </label>
-                            <input name="full_name" type="text" placeholder="Enter Your Name...">
-                        </div>
 
-                        <div class="form-group">
-                            <label for=""> Email: </label>
-                            <input name="email" type="email" placeholder="Enter Your Email...">
-                        </div>
-
-                        <div class="form-group">
-                            <label for=""> Talk Name: </label>
-                            <input name="talk-name" type="text" placeholder="Enter Your Talk Name... ">
-                        </div>
-
-
-                        <div class="form-group">
-                          <button class="btn rounded submit-btn"> Submit </button>
-                        </div>
-
-                        <input type="hidden" name="_token" value="{{csrf_token()}}">
-                    </form>
-                    <button id="rsvp-request-btn" class="btn rounded submit-btn"> RSVP </button>
+            <div class="row">
+                <div class="col-100 text-center">
+                    <h3>What would you like to do?</h3>
                 </div>
             </div>
- 
-            <div class="row" id="rsvp-form">
-                <div class="col-100">
-                    <form method="post" action="{{ url('/rsvp') }}">
-                        <div class="form-group">
-                            <label for=""> Name: </label>
-                            <input name="full_name" type="text" placeholder="Enter Your Name...">
-                        </div>
-
-                        <div class="form-group">
-                            <label for=""> Email: </label>
-                            <input name="email" type="email" placeholder="Enter Your Email...">
-                        </div>
-
-                        <div class="form-group">
-                          <button class="btn rounded submit-btn"> Submit </button>
-                        </div>
-
-                        <input type="hidden" name="_token" value="{{csrf_token()}}">
-                    </form>
-
-                    <button id="speaker-request-btn" class="btn rounded submit-btn"> Talk Proposal </button>
+            <div class="row">
+                <div class="col-50 text-center">
+                    <button class="btn rounded reg_action" data-form="attendee_form">Attend the Conference</button>
                 </div>
+                <div class="col-50 text-center">
+                    <button class="btn rounded reg_action" data-form="speaker_form">Speak at the Conference</button>
+                </div>
+            </div>
 
+            <div class="row">
+                <div class="col-100">
+                    @include('partials/attendee-registration-form')
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-100">
+                    @include('partials/speaker-registration-form')
+                </div>
             </div>
         </div>
 
@@ -168,7 +141,6 @@
     <script>
         $('.map-overlay').on('click', function() {
             $(this).css('display', 'none');
-
         })
 
         $('#rsvp-request-btn').on('click', function() {
@@ -187,6 +159,13 @@
         $(window).on('scroll', function() {
             $('.map-overlay').css('display', 'block');
         })
+        
+        $('.reg_action').click(function (e) {
+            var form = $(e.currentTarget).data('form');
+
+            $('.reg-form').hide();
+            $('#' + form).fadeIn('slow');
+        });
     </script>
 </body>
 
