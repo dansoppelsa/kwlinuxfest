@@ -2,7 +2,7 @@
     <h3>Attendee Registration</h3>
     <div class="form-group">
         <label for="">Name:</label>
-        <input name="full_name" type="text" required placeholder="Enter Your Name...">
+        <input name="full_name" type="text" required  placeholder="Enter Your Name...">
     </div>
 
     <div class="form-group">

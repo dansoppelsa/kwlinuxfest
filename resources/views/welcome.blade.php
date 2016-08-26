@@ -19,7 +19,7 @@
     <section class="hero flex flex-center-center">
         <div class="hero-content text-center">
             <h1 class="hero-lead"> Kitchener Waterloo Linux Fest 2017 </h1>
-            <h2 class="hero-sub-text"> A Linux/Open Source Conference For The Rest Of Us</h2>
+            <h2 class="hero-sub-text"> A Linux/Open Source Conference For The Kitchener Waterloo Area</h2>
             <a href="#register" class="hero-btn rounded"> Register </a>
         </div>
     </section>
@@ -96,10 +96,16 @@
     </section>
 
     <section class="contact marketing-section">
-
         <a id="register"></a>
 
         <div class="container">
+            @if (count($errors) > 0)  
+                <div class="alert alert-danger">
+                    @foreach($errors->all() as $error)
+                        <p> {{$error}} </p>
+                    @endforeach
+                </div>
+            @endif
 
             <div class="row">
                 <div class="col-100">
@@ -108,7 +114,6 @@
                     </div>
                 </div>
             </div>
-
 
             <div class="row">
                 <div class="col-100 text-center">

@@ -11,23 +11,22 @@
 |
 */
 
-use App\RSVP;
+use Illuminate\Http\Request;
 
-Route::post('/rsvp', function() {
-    $req = Request::all();
-
-    $rsvp = new RSVP();
-    $rsvp->full_name = $req['full_name'];
-    $rsvp->email = $req['email'];
-
-    $rsvp->save();
-
-
-});
 
 Route::post('register/attendee', 'RegistrationController@registerAttendee');
 Route::post('register/speaker', 'RegistrationController@registerSpeaker');
 
-Route::get('/', function () {
+Route::get('register/speaker/registered', function() {
+    return view('registered', ['speaker' => true]);
+});
+
+Route::get('register/attendee/registered', function() {
+    return view('registered', ['speaker' => false]);
+});
+
+
+Route::get('/', function (Request $request) {
     return view('welcome');
 });
+
