@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-class RegistrationController extends Controller
+class WelcomeController extends Controller
 {
     public function index()
     {
