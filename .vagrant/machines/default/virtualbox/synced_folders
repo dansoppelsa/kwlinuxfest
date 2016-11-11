@@ -1,1 +1,0 @@
-{"virtualbox":{"/home/vagrant/kwlinuxcon-laravel":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/kwlinuxcon-laravel","hostpath":"/Users/cjm/sandbox/kwlinuxcon_laravel","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/cjm/sandbox/kwlinuxcon_laravel","disabled":false,"__vagrantfile":true}}}
