@@ -4,12 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="_token" content="{{ csrf_token() }}">
     <title> The Kitchener Waterloo Area Linux Conference Website</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="/css/palette.css">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 
 </head>
@@ -43,7 +45,6 @@
         </div>
     </section>
 
-
     <!-- speakers -->
     <section class="speakers marketing-section">
         <div class="container">
@@ -72,7 +73,6 @@
             </div>
     </section>
 
-
     <section class="location marketing-section">
         <div class="container">
             <div class="row">
@@ -98,7 +98,7 @@
     <section class="contact marketing-section">
         <a id="register"></a>
 
-        <div class="container">
+        <div class="container" id="registration-app">
             @if (count($errors) > 0)  
                 <div class="alert alert-danger">
                     @foreach($errors->all() as $error)
@@ -115,30 +115,53 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-100 text-center">
-                    <h3>What would you like to do?</h3>
+            <div v-show="submitting == false && complete == false">
+                <div class="row">
+                    <div class="col-100 text-center">
+                        <h3>What would you like to do?</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-50 text-center">
-                    <button class="btn rounded reg_action" data-form="attendee_form">Attend the Conference</button>
+
+                <div class="row">
+                    <div class="col-50 text-center">
+                        <button class="btn rounded reg_action"
+                                v-on:click="setMode('attendee')">Attend the Conference</button>
+                    </div>
+                    <div class="col-50 text-center">
+                        <button class="btn rounded reg_action"
+                                v-on:click="setMode('speaker')">Speak at the Conference</button>
+                    </div>
                 </div>
-                <div class="col-50 text-center">
-                    <button class="btn rounded reg_action" data-form="speaker_form">Speak at the Conference</button>
+
+                <div class="row">
+                    <div class="col-100">
+                        <div v-show="mode === 'attendee'">
+                            @include('partials/attendee-registration-form')
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-100">
+                        <div v-show="mode === 'speaker'">
+                            @include('partials/speaker-registration-form')
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-100">
-                    @include('partials/attendee-registration-form')
+
+            <div class="text-center" v-show="submitting">
+                <i style="font-size: 5em;" class="fa fa-linux fa-spin"></i>
+                Submitting...
+            </div>
+
+            <div class="row" v-show="complete">
+                <div class="col-100 text-center">
+                    <h2>@{{ feedback }}</h2>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-100">
-                    @include('partials/speaker-registration-form')
-                </div>
-            </div>
+
         </div>
 
     </section>
@@ -148,30 +171,13 @@
             $(this).css('display', 'none');
         })
 
-        $('#rsvp-request-btn').on('click', function() {
-            $('#speaker-form').css('display', 'none');
-            $('#rsvp-form').css('display', 'block');
-            $('#register-lead-text').html('RSVP');
-        })
-
-
-        $('#speaker-request-btn').on('click', function() {
-            $('#rsvp-form').css('display', 'none');
-            $('#speaker-form').css('display', 'block');
-            $('#register-lead-text').html('Talk Proposal');
-        })
-
         $(window).on('scroll', function() {
             $('.map-overlay').css('display', 'block');
         })
-        
-        $('.reg_action').click(function (e) {
-            var form = $(e.currentTarget).data('form');
-
-            $('.reg-form').hide();
-            $('#' + form).fadeIn('slow');
-        });
     </script>
-</body>
 
-</html>j
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.0.3/vue-resource.min.js"></script>
+    <script src="/js/register.js"></script>
+</body>
+</html>
