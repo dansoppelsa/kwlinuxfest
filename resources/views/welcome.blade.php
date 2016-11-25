@@ -36,8 +36,9 @@
                         <p class="body-copy">
                         A conference that is run to celebrate open source and all things *nix. 
                         Open source is something to be celebrated lets get together and have a party!
-                        The conference will be run on January 28th 2016 at 200 Bathurst Drive, Waterloo Ontario.
-                       </p>
+                        The conference will be run on January 28th 2017 at 200 Bathurst Drive, Waterloo Ontario.
+                        Due to the success of last year we are excited for this years activities.
+                        </p>
                         <a href="#register" class="btn large-top rounded"> Register </a>
                     </div>
                 </div>
@@ -45,7 +46,7 @@
         </div>
     </section>
 
-    <!-- speakers -->
+     <!-- speakers -->
     <section class="speakers marketing-section">
         <div class="container">
             <div class="row">
@@ -73,6 +74,45 @@
             </div>
     </section>
 
+    <!-- sponsers -->
+    <section class="marketing-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-100">
+                    <div class="text-center">
+                        <h2 class="section-lead"> Sponsors </h2>
+                    </div>
+                </div>
+
+                <div class="text-center col-100">
+                    <a href="http://www.vehikl.com"> <img src="http://vehikl.com/assets/style-guide/vehikl_avatar.jpg" alt="" /> </a>
+                    <p class="body-copy"> Vehikl </p>
+                </div>
+
+            </div>
+    </section>
+
+    <section class="marketing-section">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-100">
+                    <div class="text-center">
+                        <h2 class="section-lead"> Contact Us</h2>
+                    </div>
+                </div>
+
+                <div class="text-center col-100">
+                    <p class="body-copy"> If you have any questions email <a href="mailto:colin.j.mills96@gmail.com" target="_top"> <i> colin.j.mills96@gmail.com </i> </a>  </p>
+
+                    <p class="body-copy"> You can also follow us on<a href="http://www.twitter.com/kwlinuxfest"> Twitter </a> </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
     <section class="location marketing-section">
         <div class="container">
             <div class="row">
@@ -88,7 +128,7 @@
                     <div class="map-container">
                         <div class="map-overlay"></div>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2893.5150431768416!2d-80.53097868450679!3d43.51245137912638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882bf3cccbdadb2d%3A0xc8a38493085b25dc!2s200+Bathurst+Dr%2C+Waterloo%2C+ON+N2V+2L7!5e0!3m2!1sen!2sca!4v1470427175974"
-                            class="map"></iframe>
+                                class="map"></iframe>
                     </div>
                 </div>
             </div>
@@ -153,7 +193,7 @@
 
             <div class="text-center" v-show="submitting">
                 <i style="font-size: 5em;" class="fa fa-linux fa-spin"></i>
-                Submitting...
+                <p class="body-copy"> Submitting... </p>
             </div>
 
             <div class="row" v-show="complete">
@@ -167,13 +207,13 @@
     </section>
 
     <script>
-        $('.map-overlay').on('click', function() {
-            $(this).css('display', 'none');
-        })
+$('.map-overlay').on('click', function() {
+    $(this).css('display', 'none');
+})
 
-        $(window).on('scroll', function() {
-            $('.map-overlay').css('display', 'block');
-        })
+$(window).on('scroll', function() {
+    $('.map-overlay').css('display', 'block');
+})
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.min.js"></script>
