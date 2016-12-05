@@ -44,6 +44,8 @@
     </div>
 
     <div class="form-group">
-        <button v-on:click="submitSpeaker()" class="btn rounded submit-btn">Submit</button>
+        <button v-on:click="submitSpeaker()"
+                :disabled="! speakerFormIsValid || submitting"
+                class="btn rounded submit-btn">Submit</button>
     </div>
 </div>
