@@ -16,6 +16,8 @@
                 placeholder="Enter Your Email...">
     </div>
     <div class="form-group">
-        <button v-on:click="submitAttendee()" :disabled="submitting" class="btn rounded submit-btn">Submit</button>
+        <button v-on:click="submitAttendee()"
+                :disabled="! attendeeFormIsValid || submitting"
+                class="btn rounded submit-btn">Submit</button>
     </div>
 </div>

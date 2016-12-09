@@ -59,6 +59,19 @@ new Vue({
             return document.querySelector('meta[name=_token]').content
         }
     },
+    computed: {
+        attendeeFormIsValid: function () {
+            return  this.attendee.name &&
+                    this.attendee.email;
+        },
+        speakerFormIsValid: function () {
+            return  this.speaker.name &&
+                    this.speaker.email &&
+                    this.speaker.talk_name &&
+                    this.speaker.job_title &&
+                    this.speaker.description;
+        }
+    },
     mounted: function () {
 
     }

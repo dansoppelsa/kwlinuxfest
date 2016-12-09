@@ -260,3 +260,11 @@ a.hero-btn  {
 .large-top {
   margin-top: 1rem;
 }
+
+.submit-btn {
+  transition: all 0.5s;
+}
+
+button[disabled] {
+  opacity: 0.3;
+}
