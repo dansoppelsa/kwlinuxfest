@@ -47,7 +47,7 @@
     </section>
 
      <!-- speakers -->
-    <section class="speakers marketing-section">
+    <section class="speakers flex-center-center marketing-section">
         <div class="container">
             <div class="row">
                 <div class="col-100">
@@ -56,21 +56,37 @@
                     </div>
                 </div>
 
-                <div class="col-100">
-                    <div class="text-center">
-                        <h2 class="section-lead"> Coming Soon.... </h2>
+                <div class="row">
+                    <div class="col-25">
+                        <div class="speaker-card text-center">
+                            <img src="https://files.slack.com/files-pri/T0261211E-F3M76A2TD/kris-cropped.jpg" alt="" />
+                            <h2 class="speaker-name"> Kris Braun </h2>
+                            <h2 class="speaker-name"> Practical projects with OpenWRT </h2>
+                            <h3 class="speaker-title"> CTO at KidsWifi </h3>
+                            <p class="speaker-copy"> After a brief introduction to OpenWRT, we'll walk through four simple projects involving customizations of OpenWRT. Most projects focus on monitoring or manipulating Internet traffic flowing through the device.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-25">
+                        <div class="speaker-card text-center">
+                            <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAMlAAAAJDRkNTI1OWQ2LWRhNTgtNDAyOS05YmI2LWUyNmIwZGEwMGZkNw.jpg" alt="" />
+                            <h2 class="speaker-name"> Bob Jonkman </h2>
+                            <h2 class="speaker-name"> What VoIP Can Do For You</h2>
+                            <h3 class="speaker-title"> Consultant </h3>
+                            <p class="speaker-copy"> The power and flexibility of running a VoIP server. A run-through of some VoIP features with an interactive demonstration, in which participants can use their own cell phones to dial in to the demo server and use the features themselves. </p>
+                        </div>
+                    </div>
+ 
+                    <div class="col-25">
+                        <div class="speaker-card text-center">
+                            <img src="https://media.licdn.com/media/AAEAAQAAAAAAAAZsAAAAJDllNWUxYmE1LTM3ZTYtNDNjZS05OGY3LTVlNTFkNGY4MmFlNQ.jpg" alt="" />
+                            <h2 class="speaker-name"> Tony Thompson </h2>
+                            <h2 class="speaker-name"> Raspberry Pi + Arduino: The Hard Way </h2>
+                            <h3 class="speaker-title"> Software Developer @ Dozr</h3>
+                            <p class="speaker-copy">  Like chocolate and peanut butter, Raspberry Pi and Arduino taste great together.  We'll take a look at the non-USB hardware available on each platform, and how to use it to make hardware and software simpler, but probably not easier. </p>
+                        </div>
                     </div>
                 </div>
-                <!-- <div class="row"> -->
-                <!--     <div class="col-25"> -->
-                <!--         <div class="speaker-card text-center"> -->
-                <!--             <img src="https://pbs.twimg.com/profile_images/541811449845137408/ebWKKWxx.jpeg" alt="" /> -->
-                <!--             <h2 class="speaker-name"> Evan You </h2> -->
-                <!--             <h3 class="speaker-title"> Developer </h3> -->
-                <!--         </div> -->
-                <!--     </div> -->
-               <!-- </div> -->
-
             </div>
     </section>
 

@@ -235,6 +235,14 @@ a.hero-btn  {
 
 /************/
 
+.speaker-copy {
+  font-size: .4rem;
+  letter-spacing: .02rem;
+  font-weight: 300;
+  line-height: 1.0rem;
+  margin-bottom: 1rem;
+}
+
 /** helpers **/
 .text-center {
   text-align: center;
