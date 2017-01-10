@@ -59,7 +59,7 @@
                 <div class="row">
                     <div class="col-25">
                         <div class="speaker-card text-center">
-                            <img src="https://files.slack.com/files-pri/T0261211E-F3M76A2TD/kris-cropped.jpg" alt="" />
+                            <img src="{{ url('/kris.jpg')  }}" alt="" />
                             <h2 class="speaker-name"> Kris Braun </h2>
                             <h2 class="speaker-name"> Practical projects with OpenWRT </h2>
                             <h3 class="speaker-title"> CTO at KidsWifi </h3>
@@ -67,6 +67,16 @@
                         </div>
                     </div>
 
+                    <div class="col-25">
+                        <div class="speaker-card text-center">
+                            <img src="{{ url('/jason.jpg')  }}" alt="" />
+                            <h2 class="speaker-name"> Jason Eckert </h2>
+                            <h2 class="speaker-name"> A brief history of Linux and Open Source technology | Dean of Technology, triOS College / Author of 13 Linux books (including the official SUSE books)</h2>
+                            <h3 class="speaker-title"> Dean of Technology, triOS College </h3>
+                            <p class="speaker-copy">  A fun and interesting talk about where the Linux operating system came from, why it succeeded, and how Open Source has shaped technology today and how it will continue to do so in the future. </p>
+                        </div>
+                    </div>
+ 
                     <div class="col-25">
                         <div class="speaker-card text-center">
                             <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAMlAAAAJDRkNTI1OWQ2LWRhNTgtNDAyOS05YmI2LWUyNmIwZGEwMGZkNw.jpg" alt="" />
