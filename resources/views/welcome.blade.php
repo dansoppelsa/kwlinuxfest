@@ -37,7 +37,7 @@
                         A conference that is run to celebrate open source and all things *nix. 
                         Open source is something to be celebrated lets get together and have a party!
                         The conference will be run on January 28th 2017 at 200 Bathurst Drive, Waterloo Ontario.
-                        Due to the success of last year we are excited for this years activities.
+                        Due to the success of last year we are excited for this year's activities.
                         </p>
                         <a href="#register" class="btn large-top rounded"> Register </a>
                     </div>
@@ -76,6 +76,17 @@
                             <p class="speaker-copy">  A fun and interesting talk about where the Linux operating system came from, why it succeeded, and how Open Source has shaped technology today and how it will continue to do so in the future. </p>
                         </div>
                     </div>
+
+                    <div class="col-25">
+                        <div class="speaker-card text-center">
+                            <img src="{{ url('/marc.png')  }}" alt="" />
+                            <h2 class="speaker-name"> Marc Paré </h2>
+                            <h2 class="speaker-name">  LibreOffice - Open Source Project, Community Driven Success </h2>
+                            <h3 class="speaker-title"> Part of Marketing Team </h3>
+                            <p class="speaker-copy"> The history behind The Document Foundation's LibreOffice project and how a community based on meritocracy has driven it to its success.</p>
+                        </div>
+                    </div>
+ 
  
                     <div class="col-25">
                         <div class="speaker-card text-center">
