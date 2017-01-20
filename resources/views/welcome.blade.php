@@ -22,7 +22,7 @@
         <div class="hero-content text-center">
             <h1 class="hero-lead"> Kitchener Waterloo Linux Fest 2017 </h1>
             <h2 class="hero-sub-text"> A Linux/Open Source Conference For The Kitchener Waterloo Area</h2>
-            <a href="#register" class="hero-btn rounded"> Register </a>
+            <p class="hero-sub-text"> Registration has now closed. We have reached capacity. Thank you for the continued support, we hope to see you there next year. </p>
         </div>
     </section>
 
@@ -171,78 +171,6 @@
             </div>
         </div>
     </section>
-
-    <section class="contact marketing-section">
-        <a id="register"></a>
-
-        <div class="container" id="registration-app">
-            @if (count($errors) > 0)  
-                <div class="alert alert-danger">
-                    @foreach($errors->all() as $error)
-                        <p> {{$error}} </p>
-                    @endforeach
-                </div>
-            @endif
-
-            <div class="row">
-                <div class="col-100">
-                    <div class="text-center">
-                        <h2 class="section-lead" id="register-lead-text">Register</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div v-show="submitting == false && complete == false">
-                <div class="row">
-                    <div class="col-100 text-center">
-                        <h3>What would you like to do?</h3>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-50 text-center">
-                        <button class="btn rounded reg_action"
-                                v-on:click="setMode('attendee')">Attend the Conference</button>
-                    </div>
-                    <div class="col-50 text-center">
-                        <button class="btn rounded reg_action"
-                                v-on:click="setMode('speaker')">Speak at the Conference</button>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-100">
-                        <div v-show="mode === 'attendee'">
-                            @include('partials/attendee-registration-form')
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-100">
-                        <div v-show="mode === 'speaker'">
-                            @include('partials/speaker-registration-form')
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="text-center" v-show="submitting">
-                <i style="font-size: 5em;" class="fa fa-linux fa-spin"></i>
-                <p class="body-copy"> Submitting... </p>
-            </div>
-
-            <div class="row" v-show="complete">
-                <div class="col-100 text-center">
-                    <h2>@{{ feedback }}</h2>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
     <script>
 $('.map-overlay').on('click', function() {
     $(this).css('display', 'none');
