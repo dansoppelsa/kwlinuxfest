@@ -86,6 +86,16 @@
                             <p class="speaker-copy"> The history behind The Document Foundation's LibreOffice project and how a community based on meritocracy has driven it to its success.</p>
                         </div>
                     </div>
+
+                    <div class="col-25">
+                        <div class="speaker-card text-center">
+                            <img src="{{ url('/steph.png')  }}" alt="" />
+                            <h2 class="speaker-name"> Stephanie Rozek</h2>
+                            <h2 class="speaker-name"> The Future of the Internet: Why Digital Literacy & Inclusion Matter Now  </h2>
+                            <h3 class="speaker-title"> Stephanie Rozek, Hive WR Executive Director  </h3>
+                        </div>
+                    </div>
+ 
  
  
                     <div class="col-25">
