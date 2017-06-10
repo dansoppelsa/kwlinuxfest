@@ -16,11 +16,26 @@ new Vue({
         feedback: null,
         token: null,
         submitting: false,
-        complete: false
+        complete: false,
+        errors: null 
     },
     methods: {
         setMode: function(mode) {
             this.mode = mode
+        },
+        displayErrors(json) {
+            let errorString = '';
+            const body = json.body;
+
+            for (var error in body) {
+                errorString = errorString.concat(body[error]);
+                if (errorString.length > Object.keys(body).length > 1) {
+                    errorString = errorString.concat(', ');
+                }
+            }
+
+            toastr.error(errorString);
+            return;
         },
         submitAttendee: function () {
             this.submitting = true
@@ -34,6 +49,7 @@ new Vue({
                 this.complete = true
                 this.feedback = 'Thank you for registering to attend!'
             }, function (response) {
+                this.errors = response
                 this.submitting = false
             })
         },
@@ -52,6 +68,7 @@ new Vue({
                 this.complete = true
                 this.feedback = 'Thank you for registering to speak!'
             }, function(response) {
+                this.errors = response
                 this.submitting = false
             })
         },
@@ -72,6 +89,7 @@ new Vue({
                     this.speaker.description;
         }
     },
+
     mounted: function () {
 
     }

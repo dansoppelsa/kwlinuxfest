@@ -7,6 +7,7 @@
     <meta name="_token" content="{{ csrf_token() }}">
     <title> The Kitchener Waterloo Area Linux Conference Website</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="/css/palette.css">
@@ -139,14 +140,9 @@
         <a id="register"></a>
 
         <div class="container" id="registration-app">
-            @if (count($errors) > 0)  
-                <div class="alert alert-danger">
-                    @foreach($errors->all() as $error)
-                        <p> {{$error}} </p>
-                    @endforeach
-                </div>
-            @endif
-
+            <div v-if="errors">
+                @{{ displayErrors(errors) }}
+            </div>
             <div class="row">
                 <div class="col-100">
                     <div class="text-center">
@@ -218,6 +214,7 @@ $(window).on('scroll', function() {
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.0.3/vue-resource.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="/js/register.js"></script>
 </body>
 </html>
