@@ -13,17 +13,24 @@ new Vue({
             job_title: null,
             description: null
         },
-        feedback: null,
         token: null,
         submitting: false,
         complete: false,
-        errors: null 
+        errors: null,
+        displayedError: false,
+        success: null,
+        displayedSuccess: false
     },
     methods: {
         setMode: function(mode) {
             this.mode = mode
         },
-        displayErrors(json) {
+        displaySuccess(success) {
+            toastr.success(success);
+            this.displayedSuccess = true;
+            return;
+        },
+        displayError(json) {
             let errorString = '';
             const body = json.body;
 
@@ -35,6 +42,7 @@ new Vue({
             }
 
             toastr.error(errorString);
+            this.displayedError = true;
             return;
         },
         submitAttendee: function () {
@@ -44,11 +52,12 @@ new Vue({
                 'email': this.attendee.email,
                 '_token': this._getToken()
             }).then(function (response) {
-                this.submitting = false
+                this.displayedSuccess = false
                 this.mode = null
                 this.complete = true
-                this.feedback = 'Thank you for registering to attend!'
+                this.success = 'Thank you for registering to attend!'
             }, function (response) {
+                this.displayedSuccess = false
                 this.errors = response
                 this.submitting = false
             })
@@ -66,8 +75,10 @@ new Vue({
                 this.submitting = false
                 this.mode = null
                 this.complete = true
-                this.feedback = 'Thank you for registering to speak!'
+                this.success = 'Thank you for registering to speak!'
+                this.displayedSuccess = false;
             }, function(response) {
+                this.displayedError = false;
                 this.errors = response
                 this.submitting = false
             })
