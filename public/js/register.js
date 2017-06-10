@@ -55,7 +55,8 @@ new Vue({
                 this.displayedSuccess = false
                 this.mode = null
                 this.complete = true
-                this.success = 'Thank you for registering to attend!'
+                console.log(['response is', response])
+                this.success = response 
             }, function (response) {
                 this.displayedSuccess = false
                 this.errors = response
@@ -75,7 +76,8 @@ new Vue({
                 this.submitting = false
                 this.mode = null
                 this.complete = true
-                this.success = 'Thank you for registering to speak!'
+                this.success = response.body
+                console.log(this.success)
                 this.displayedSuccess = false;
             }, function(response) {
                 this.displayedError = false;
