@@ -39,8 +39,12 @@ class RegistrationController extends Controller
            return response()->json($validator->errors(), 400);
        }
 
-       Speaker::create($request->all());
+       $speaker = Speaker::create($request->all());
 
-       return response()->json('Created', 201);
+
+       $response = sprintf("Hi %s thank you for registering to speak.", $speaker->full_name);
+
+
+       return response()->json($response, 201);
    }
 }

@@ -13,14 +13,37 @@ new Vue({
             job_title: null,
             description: null
         },
-        feedback: null,
         token: null,
         submitting: false,
-        complete: false
+        complete: false,
+        errors: null,
+        displayedError: false,
+        success: null,
+        displayedSuccess: false
     },
     methods: {
         setMode: function(mode) {
             this.mode = mode
+        },
+        displaySuccess(success) {
+            toastr.success(success);
+            this.displayedSuccess = true;
+            return;
+        },
+        displayError(json) {
+            let errorString = '';
+            const body = json.body;
+
+            for (var error in body) {
+                errorString = errorString.concat(body[error]);
+                if (errorString.length > Object.keys(body).length > 1) {
+                    errorString = errorString.concat(', ');
+                }
+            }
+
+            toastr.error(errorString);
+            this.displayedError = true;
+            return;
         },
         submitAttendee: function () {
             this.submitting = true
@@ -29,11 +52,14 @@ new Vue({
                 'email': this.attendee.email,
                 '_token': this._getToken()
             }).then(function (response) {
-                this.submitting = false
+                this.displayedSuccess = false
                 this.mode = null
                 this.complete = true
-                this.feedback = 'Thank you for registering to attend!'
+                console.log(['response is', response])
+                this.success = response 
             }, function (response) {
+                this.displayedSuccess = false
+                this.errors = response
                 this.submitting = false
             })
         },
@@ -50,8 +76,11 @@ new Vue({
                 this.submitting = false
                 this.mode = null
                 this.complete = true
-                this.feedback = 'Thank you for registering to speak!'
+                this.success = response.body
+                this.displayedSuccess = false;
             }, function(response) {
+                this.displayedError = false;
+                this.errors = response
                 this.submitting = false
             })
         },
@@ -72,6 +101,7 @@ new Vue({
                     this.speaker.description;
         }
     },
+
     mounted: function () {
 
     }
