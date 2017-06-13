@@ -22,7 +22,8 @@
     <section class="hero flex flex-center-center">
         <div class="hero-content text-center">
             <h1 class="hero-lead"> Kitchener Waterloo Linux Fest 2018 </h1>
-            <h2 class="hero-sub-text"> A Linux/Open Source Conference For The Kitchener Waterloo Area: Call For Papers Open Until November 1st 2017</h2>
+            <h2 class="hero-sub-text"> A Linux/Open Source Conference For The Kitchener Waterloo Area: Call For Papers/Presentations Open Until November 1st 2017</h2>
+        
             <a href="#register" class="hero-btn rounded"> Register To Speak </a>
         </div>
     </section>
@@ -36,9 +37,9 @@
                         <h2 class="section-lead"> About Linux Fest 2018 </h2>
                         <p class="body-copy">
                         A conference that is run to celebrate open source and all things *nix. 
-                        Open source is something to be celebrated lets get together and have a party!
+                        Open source is something to be celebrated let's get together and have a party!
                         The conference will be run on January 27th 2018 at Conestoga College Doon Campus, Kitchener Ontario.
-                        Due to the success of the last two year we are excited for this year's activities.
+                        Due to the success of the last two years we are excited for this year's activities.
                         </p>
                         <a href="#register" class="btn large-top rounded"> Register To Speak </a>
                     </div>
@@ -93,7 +94,7 @@
                 </div>
 
                 <div class="text-center col-100">
-                    <p class="body-copy"> You can also follow us on<a href="http://www.twitter.com/kwlinuxfest"> Twitter </a> </p>
+                    <p class="body-copy"> You can also follow us on<a href="http://www.twitter.com/kwlinuxfest" class="link"> Twitter </a> </p>
                 </div>
 
             </div>

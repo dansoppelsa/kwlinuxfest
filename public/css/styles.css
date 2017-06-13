@@ -16,6 +16,7 @@ a:hover{
   text-decoration: none;
 }
 
+
 body {
   height: 100%;
   font-family: 'Roboto', sans-serif;
@@ -271,6 +272,11 @@ a.hero-btn  {
 
 .submit-btn {
   transition: all 0.5s;
+}
+
+.link {
+    color: black;
+    text-decoration: underline;
 }
 
 button[disabled] {
