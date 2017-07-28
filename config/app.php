@@ -2,6 +2,7 @@
 
 return [
 
+    'name' => 'KW Linux Fest',
     /*
     |--------------------------------------------------------------------------
     | Application Environment
